@@ -1,0 +1,100 @@
+ <ion-header >
+  <ion-navbar >
+    <ion-title>
+            <ion-avatar id="logoleft">
+                <img src="assets/logo/LOGOTIPO.png">
+              </ion-avatar>   
+        
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br>
+
+<ion-content padding>
+
+    
+     <ion-card>    
+       <ion-card-content>
+           <ion-card-title>
+               <h2><strong>Farmacia de Turno</strong></h2>
+           </ion-card-title>
+            <p><strong>Farmacia :</strong> {{farmacias}}</p>
+            <p><strong>Dirección: </strong>{{ubicacionFarmacia}}</p>
+            <p><strong>Teléfono:</strong> {{telefonoFarmacia}}</p>
+            <p><strong>Horario:</strong> {{horariomanana}} / {{horariotarde}}</p>
+        </ion-card-content>
+    </ion-card>
+       <ion-card>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card-title >
+                           <h2><strong>Precio de Combustibles</strong></h2>
+                        </ion-card-title>
+                    </ion-col>
+                    
+                </ion-row>
+                
+                <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col><strong>Menor $ /</strong></ion-col>
+                    <ion-col><strong>Mayor $</strong></ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-4><strong>Gas</strong></ion-col>
+                    <ion-col col-8>{{promocion}}</ion-col>
+                    <ion-col></ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-4><strong>Esp. 93</strong></ion-col>
+                    <ion-col>$ {{e93menor}}</ion-col>
+                    <ion-col>$ {{e93mayor}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-4><strong>Sup. 95</strong></ion-col>
+                    <ion-col>$ {{s95menor}} </ion-col>
+                    <ion-col>$ {{s95mayor}}</ion-col>
+                </ion-row>
+                
+            </ion-grid>
+            <!--<ion-icon name="arrow-forward" role="img" class="icon icon-ios ion-ios-arrow-forward" aria-label="arrow forward"></ion-icon>-->
+           
+                <button ion-button color="dark"  block small (click)="getListadoBencineras()">Todos Los Precios Aquí <ion-icon name="arrow-dropright" class="la"></ion-icon><!--<ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>--></button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <ion-card-title>
+               <h2><strong>El Tiempo (Condicion Actual)</strong></h2>
+            </ion-card-title>
+                <ion-item>
+    <ion-avatar item-left>
+      <img src="{{rutaimgClima}}">
+    </ion-avatar>
+    <h3 text-wrap id="space">{{climaHoy}}</h3>
+    <p text-wrap>{{temperatura}} / {{rayosuv}}</p>
+  </ion-item>
+                
+                <button ion-button  color="dark" block small (click)="getPronosticoDelTiempo()" end>Pronosticos del Día<ion-icon name="arrow-dropright" class="la"></ion-icon></button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+           <button ion-button color="dark" block small (click)="tuCiudadAlDia()">Tú Ciudad al Día <ion-icon  class="la" name="arrow-dropright"  ></ion-icon></button>
+            <!--<ion-card-title>
+               <h5>Informacion Adicional</h5>
+            </ion-card-title>
+                <ion-item (click)="showAlert()">
+    
+    <h2>{{nombreCiudad}}</h2>
+    <p>{{informacionAdicional}}</p>
+  </ion-item>-->
+                
+       </ion-card-content>
+    </ion-card>
+<p>
+     <img src="{{rutabanner}}">
+      <!--<img src="assets/banner/banner.png" alt="">-->
+  </p>
+</ion-content>
